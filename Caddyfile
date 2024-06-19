@@ -1,0 +1,14 @@
+{
+  debug
+  local_certs
+  auto_https disable_redirects
+  admin 0.0.0.0:2019
+}
+
+auth.localhost:80 {
+  reverse_proxy logto:3001
+}
+
+admin.localhost:80 {
+  reverse_proxy logto:3002
+}
